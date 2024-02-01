@@ -58,22 +58,22 @@
     opacity: 1;
 }
 .color-1{
-    background-image: url(/img/backgroung/color-pallete-1.avif);
+    background-image: url(/img/backgroung/color-pallete-1.webp);
 }
 .color-2{
-    background-image: url(/img/backgroung/color-pallete-2.avif);
+    background-image: url(/img/backgroung/color-pallete-2.webp);
 }
 .color-3{
-    background-image: url(/img/backgroung/color-pallete-3.avif);
+    background-image: url(/img/backgroung/color-pallete-3.webp);
 }
 .color-4{
-    background-image: url(/img/backgroung/color-pallete-4.avif);
+    background-image: url(/img/backgroung/color-pallete-4.webp);
 }
 .color-5{
-    background-image: url(/img/backgroung/color-pallete-5.avif);
+    background-image: url(/img/backgroung/color-pallete-5.webp);
 }
 .color-6{
-    background-image: url(/img/backgroung/color-pallete-6.avif);
+    background-image: url(/img/backgroung/color-pallete-6.webp);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
