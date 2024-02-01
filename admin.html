@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>workspace</title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="main-background"></div>
+        <div class="notification">
+            <p></p>
+        </div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <img src="img/Icon/logo.avif" alt="logo">
+                </a>
+            </div>
+            <div class="header__navigation">
+                <nav class="navigation__menu">
+                    <ul class="menu-list">
+                        <li class="menu-list__item menu-list__items">
+                            <a href="index.html" class="menu-list__link">Home</a>
+                            <a href="shop.html" class="menu-list__link">Shop</a>
+                            <a href="about.html" class="menu-list__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__icons">
+                <div class="header__icon">
+                    <a href="admin.html" class="header__icon-link">
+                        <img src="img/Icon/user.png" alt="Avatar">
+                    </a>
+                </div>
+                <div class="header__icon wish-list-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/heart.png" alt="Heart">
+                    </a>
+                </div>
+                <div class="header__icon cart-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/parcel.png" alt="Cart">
+                    </a>
+                </div>
+                <div class="header__icon burger-menu-button-container">
+                    <span class="burger-menu-button"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification">
+            <p></p>
+        </div>
+        <div class="cart-container">
+            <div class="cart-title">
+                <h2>Cart</h2>
+                <span class="cart-close-button close-button"></span>
+            </div>
+            <div class="cart-empty">
+                <div class="img-container">
+                    <img src="img/Icon/shopping-cart.png">
+                </div>
+                <p>Your cart is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="products-cart" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="productsInCart">
+            {{#each products}}
+                <div class="cart-product-img">
+                    <img src="{{imageMain}}" width="300" height="300">
+                </div>
+                <div class="cart-product-info">
+                    <p class="product-name">{{name}}</p>
+                    <span class="product-price">Price: {{price}}$</span>
+                </div>
+                <div class="remove-button">
+                    <span></span>
+                </div>
+            {{/each}}
+            </script>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <span></span>
+                </div>
+                <div class="checkout-button">
+                    <a href="#">Checkout</a>
+                </div>
+                <div class="view-cart-button">
+                    <a href="order.html">View Cart</a>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+
+
+        <div class="wish-list-container">
+            <div class="wish-list-title">
+                <h2>Wishlist</h2>
+                <span class="wish-list-close-button close-button"></span>
+            </div>
+            <div class="wish-list-empty">
+                <div class="img-container">
+                    <img src="img/Icon/heart.png">
+                </div>
+                <p>Your wishlist is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="wish-list-products" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="wishListProducts">
+                {{#each products}}
+                    <div class="">
+                        <img src="{{imageMain}}" width="300" height="300">
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                        <span class="product-price">{{price}}</span>
+                    </div>
+                {{/each}}
+            </script>
+            <div class="wish-list-footer">
+                <div class="add-to-cart outline-buttons">
+                    <a href="#">Add to cart</a>
+                </div>
+                <div class="clear-wish-list-button outline-buttons">
+                    <a href="#">Clear wishlist</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="product-workspace">
+            <div class="create-product-container">
+                <div class="wrapper"></div>
+                <div class="workspace-title">
+                    <h2>Create products</h2>
+                </div>
+                <div class="create-product">
+                    <form class="form-to-create">
+                        <div>
+                            <label for="productName">add a name</label>
+                            <input id="productName" name="name">
+                        </div>
+                        <div>
+                            <label for="productPrice">add a price</label>
+                            <input id="productPrice" name="price">
+                        </div>
+                        <div>
+                            <label for="productDescription">add a description</label>
+                            <textarea id="productDescription" name="description"></textarea>
+                        </div>
+                        <div>
+                            <label for="productMainImage">Main image</label>
+                            <input id="productMainImage" name="productMainImage">
+                        </div>
+                        <div>
+                            <label for="productAdditionalImage">Additional image</label>
+                            <input id="productAdditionalImage" name="productAdditionalImage">
+                        </div>
+                        <div>
+                            <label for="isThisNew">Is this new?</label>
+                            <select id="isThisNew" name="isThisNew">
+                                <option value="true"> Yes </option>
+                                <option value="false"> No </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="selectCategory">Select a category</label>
+                            <select id="selectCategory" name="selectCategory">
+                                <option value="Seating"> Seating </option>
+                                <option value="Storage"> Storage </option>
+                                <option value="Tables"> Tables </option>
+                                <option value="Accessories"> Accessories </option>
+                            </select>
+                        </div>
+                        <input name="createProductButton" type="button" value="Create Product" />
+                    </form>
+                </div>
+            </div>
+            <div class="edit-product-container">
+                <div class="wrapper"></div>
+                <div class="workspace-title">
+                    <h2>Edit product</h2>
+                    <p>Please select a category</p>
+                </div>
+                <div id="selectedContainer" class="category-selections">
+                    <span id="table" data-category="Table" class="category-selection link-underline">TABLES</span>
+                    <span id="storage" data-category="Storage" class="category-selection link-underline">STORAGE</span>
+                    <span id="seating" data-category="Seating" class="category-selection link-underline">SEATING</span>
+                    <span id="bed" data-category="Bed" class="category-selection link-underline">BEDS</span>
+                    <span id="accessories" data-category="Accessories" class="category-selection link-underline">ACCESSORIES</span>
+                    <span id="newProduct" class="category-selection link-underline">NEW</span>
+                </div>
+
+                <div id="edit-product" class="products"></div>
+                <script type="text/x-handlebars-template" id="productToEditTemplate">
+                    {{#each products}}
+                        <div class="product-image">
+                            <img class="main-img" src="{{imageMain}}" width="300" height="300" alt="{{name}}">
+                            <img class="additional-img" src="{{imageAdditional}}" width="300" height="300" alt="{{name}}">
+                        </div>
+                        <div class="product-actions vertical-product-action">
+                            <div class="action-button see edit">
+                                <img src="img/Icon/edit.png">
+                                <span class="action-button-text">tap to edit</span>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">{{name}}</p>
+                            <span class="product-price">{{price}}$</span>
+                        </div>
+                        <div class="quick-view">
+                            <div class="quick-view-close-button"></div>
+                            <div class="quick-view__img">
+                                <img src="{{imageMain}}" width="300" height="300" alt="{{name}}">
+                            </div>
+                            <form class="form-to-edit">
+                                <div>
+                                    <label for="editProductName">rename a product</label>
+                                    <input id="editProductName" name="name" value="{{name}}">
+                                </div>
+                                <div>
+                                    <label for="editProductPrice">edit price</label>
+                                    <input id="editProductPrice" name="price" value="{{price}}$">
+                                </div>
+                                <div>
+                                    <label for="editProductDescription">edit description</label>
+                                    <textarea id="editProductDescription" name="description">{{description}}</textarea>
+                                </div>
+                                <div>
+                                    <label for="editProductMainImage">change main image</label>
+                                    <input id="editProductMainImage" name="productMainImage" value="{{imageMain}}">
+                                </div>
+                                <div>                                        
+                                    <label for="editProductAdditionalImage">change additional image</label>
+                                    <input id="editProductAdditionalImage" name="productAdditionalImage" value="{{imageAdditional}}">
+                                </div>
+                                <div>
+                                    <label for="editStatusNew">Is this new?</label>
+                                    <select id="editStatusNew" name="isThisNew">
+                                        <option value disabled selected>{{new}}</option>
+                                        <option value="true"> Yes </option>
+                                        <option value="false"> No </option>
+                                    </select>
+                                </div>                                    
+                                <div>
+                                    <label for="editCategory">Change a category</label>
+                                    <select id="editCategory" name="selectCategory">
+                                        <option value disabled selected>{{category}}</option>
+                                        <option value="Seating"> Seating </option>
+                                        <option value="Storage"> Storage </option>
+                                        <option value="Tables"> Tables </option>
+                                        <option value="Bed"> Bed </option>
+                                        <option value="Accessories"> Accessories </option>                                        </select>
+                                </div>
+                                <input id="editProductButtonSubmit" name="editProductButton" type="button" value="Edit Product"/>
+                                <input id="deleteProductButtonSubmit" name="deleteProductButton" type="button" value="Delete Product"/>
+                            </form>
+                        </div>
+                    {{/each}}
+                </script>
+            </div>
+        </section>
+
+
+        
+
+    </body>
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/productsWishList.js"></script>
+    <script type="module" src="js/productsCart.js"></script>
+
+
+</html>

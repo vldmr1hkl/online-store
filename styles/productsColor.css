@@ -1,0 +1,85 @@
+.products-colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.products-colors-title h2{
+    position: relative;
+    z-index: 1;
+}
+.products-colors-title{
+    width: 200px;
+    margin-right: 10px;
+}
+.products-colors-title h2{
+    font-size: 20px;
+}
+
+.products-colors-title p{
+   
+}
+.color-palettes{
+    display: flex;
+    margin-left: 30px;
+    height: 100%;
+    overflow-x: scroll;
+}
+.color-palettes div{
+    min-width: 100px;
+    height: 600px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.color-palettes div:hover{
+    min-width: 180px;
+    transition: all 0.5s ease-in-out;
+}
+.color-palettes span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    min-width: 140px;
+    padding: 15px 5px;
+    background-color: rgba(255, 255, 255, 0.109);
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    font-size: 10px;
+    font-weight: bold;
+}
+.color-palettes div:hover span{
+    visibility: visible;
+    opacity: 1;
+}
+.color-1{
+    background-image: url(/img/backgroung/color-pallete-1.avif);
+}
+.color-2{
+    background-image: url(/img/backgroung/color-pallete-2.avif);
+}
+.color-3{
+    background-image: url(/img/backgroung/color-pallete-3.avif);
+}
+.color-4{
+    background-image: url(/img/backgroung/color-pallete-4.avif);
+}
+.color-5{
+    background-image: url(/img/backgroung/color-pallete-5.avif);
+}
+.color-6{
+    background-image: url(/img/backgroung/color-pallete-6.avif);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}

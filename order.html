@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <img src="img/Icon/logo.avif" alt="logo">
+                </a>
+            </div>
+            <div class="header__navigation">
+                <nav class="navigation__menu">
+                    <ul class="menu-list">
+                        <li class="menu-list__item menu-list__items">
+                            <a href="index.html" class="menu-list__link">Home</a>
+                            <a href="shop.html" class="menu-list__link">Shop</a>
+                            <a href="about.html" class="menu-list__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__icons">
+                <div class="header__icon">
+                    <a href="admin.html" class="header__icon-link">
+                        <img src="img/Icon/user.png" alt="Avatar">
+                    </a>
+                </div>
+                <div class="header__icon wish-list-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/heart.png" alt="Heart">
+                    </a>
+                </div>
+                <div class="header__icon cart-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/parcel.png" alt="Cart">
+                    </a>
+                </div>
+                <div class="header__icon burger-menu-button-container">
+                    <span class="burger-menu-button"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="notification">
+            <p></p>
+        </div>
+        <div class="cart-container">
+            <div class="cart-title">
+                <h2>Cart</h2>
+                <span class="cart-close-button close-button"></span>
+            </div>
+            <div class="cart-empty">
+                <div class="img-container">
+                    <img src="img/Icon/shopping-cart.png">
+                </div>
+                <p>Your cart is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="products-cart" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="productsInCart">
+            {{#each products}}
+                <div class="cart-product-img">
+                    <img src="{{imageMain}}" width="300" height="300">
+                </div>
+                <div class="cart-product-info">
+                    <p class="product-name">{{name}}</p>
+                    <span class="product-price">Price: {{price}}$</span>
+                    <span class="product-quanity"></span>
+                </div>
+                <div class="remove-button">
+                    <span></span>
+                </div>
+            {{/each}}
+            </script>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <span></span>
+                </div>
+                <div class="checkout-button">
+                    <a href="#">Checkout</a>
+                </div>
+                <div class="view-cart-button">
+                    <a href="#">View Cart</a>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+
+
+        <div class="wish-list-container">
+            <div class="wish-list-title">
+                <h2>Wishlist</h2>
+                <span class="wish-list-close-button close-button"></span>
+            </div>
+            <div class="wish-list-empty">
+                <div class="img-container">
+                    <img src="img/Icon/heart.png">
+                </div>
+                <p>Your wishlist is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="wish-list-products" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="wishListProducts">
+                {{#each products}}
+                    <div class="">
+                        <img src="{{imageMain}}" width="300" height="300">
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                        <span class="product-price">{{price}}</span>
+                    </div>
+                {{/each}}
+            </script>
+            <div class="wish-list-footer">
+                <div class="add-to-cart outline-buttons">
+                    <a href="#">Add to cart</a>
+                </div>
+                <div class="clear-wish-list-button outline-buttons">
+                    <a href="#">Clear wishlist</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="order">
+            <div class="order-product-container">
+            </div>
+            <script type="text/x-handlebars-template" id="productsToOrder">
+                {{#each products}}
+                    <div class="order-product-image">
+                        <img src="{{imageMain}}" width="300" height="300">
+                    </div>
+                    <div class="order-product-details">
+                        <div class="order-product-name">
+                            <p>{{name}}</p>
+                            <div class="remove-button">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="order-product-price">
+                            <p class="label">Price</p>
+                            <span>{{price}}$</span>
+                        </div>
+                        <div class="order-product-quantity">
+                            <p class="label">Quantity</p>
+                            <div class="counter">
+                                <button class="minus-btn">-</button>
+                                <span class="count">{{quantity}}</span>
+                                <button class="plus-btn">+</button>
+                            </div>
+                        </div>
+                        <div class="order-product-total">
+                            <p class="label">Total</p>
+                            <span>{{total}}$</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </script>
+            
+
+            <div>
+                <div class="order-review">
+                    <table>
+                        <caption>Your order</caption>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Subtotal</th>
+                                <th class="order-check-subtotal"></th>
+                            </tr>
+                            <tr>
+                                <th>Shipping</th>
+                                <th>
+                                    <ul>
+                                        <li>
+                                            <input type="radio" id="freeShipping" name="shipping"><label for="freeShipping">Free shipping</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="flatRate" name="shipping"><label for="flatRate">Flat rate: £10.00</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="localPickup" name="shipping"><label for="localPickup">Local pickup</label>
+                                        </li>
+                                    </ul>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Tax</th>
+                                <th>£11.00</th>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th>£2520.00</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="payment">
+                        <ul>
+                            <li class="payment-method">
+                                <input type="radio" id="bankTransfer" name="shipping">
+                                <label for="bankTransfer">Direct bank transfer</label>
+                                <div class="payment-description">
+                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                                </div>
+                            </li>
+                            <li class="payment-method">
+                                <input type="radio" id="checkPayments" name="shipping">
+                                <label for="checkPayments">Check payments</label>
+                                <div class="payment-description">
+                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                </div>
+                            </li>
+                            <li class="payment-method">
+                                <input type="radio" id="cashOnDelivery" name="shipping">
+                                <label for="cashOnDelivery">Cash on delivery</label>
+                                <div class="payment-description">
+                                    <p>Pay with cash upon delivery.</p>
+                                </div>
+                            </li>
+                            <li class="payment-method">
+                                <input type="radio" id="paypal" name="shipping">
+                                <label for="paypal">PayPal</label>
+                                <div class="payment-description">
+                                    <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form class="order-form">
+                            <input placeholder="First name">
+                            <input placeholder="Phone number">
+                            <input placeholder="Last name">
+                            <input placeholder="Town/City">
+                            <input placeholder="Postcode">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+       
+
+
+
+
+        
+
+    </body>
+    <script src="js/order.js"></script>
+
+  
+
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="main-background"></div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <img src="img/Icon/logo.avif" alt="logo">
+                </a>
+            </div>
+            <div class="header__navigation">
+                <nav class="navigation__menu">
+                    <ul class="menu-list">
+                        <li class="menu-list__item menu-list__items">
+                            <a href="index.html" class="menu-list__link">Home</a>
+                            <a href="shop.html" class="menu-list__link">Shop</a>
+                            <a href="about.html" class="menu-list__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__icons">
+                <div class="header__icon">
+                    <a href="admin.html" class="header__icon-link">
+                        <img src="img/Icon/user.png" alt="Avatar">
+                    </a>
+                </div>
+                <div class="header__icon wish-list-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/heart.png" alt="Heart">
+                    </a>
+                </div>
+                <div class="header__icon cart-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/parcel.png" alt="Cart">
+                    </a>
+                </div>
+                <div class="header__icon burger-menu-button-container">
+                    <span class="burger-menu-button"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification">
+            <p></p>
+        </div>
+        <div class="cart-container">
+            <div class="cart-title">
+                <h2>Cart</h2>
+                <span class="cart-close-button close-button"></span>
+            </div>
+            <div class="cart-empty">
+                <div class="img-container">
+                    <img src="img/Icon/shopping-cart.png">
+                </div>
+                <p>Your cart is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="products-cart" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="productsInCart">
+            {{#each products}}
+                <div class="cart-product-img">
+                    <img src="{{imageMain}}" width="300" height="300">
+                </div>
+                <div class="cart-product-info">
+                    <p class="product-name">{{name}}</p>
+                    <span class="product-price">Price: {{price}}$</span>
+                </div>
+                <div class="remove-button">
+                    <span></span>
+                </div>
+            {{/each}}
+            </script>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <span></span>
+                </div>
+                <div class="checkout-button outline-button">
+                    <a href="#">Checkout</a>
+                </div>
+                <div class="view-cart-button outline-button">
+                    <a href="order.html">View Cart</a>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+
+
+        <div class="wish-list-container">
+            <div class="wish-list-title">
+                <h2>Wishlist</h2>
+                <span class="wish-list-close-button close-button"></span>
+            </div>
+            <div class="wish-list-empty">
+                <div class="img-container">
+                    <img src="img/Icon/heart.png">
+                </div>
+                <p>Your wishlist is currently empty.</p>
+                <div class="discover-button">
+                    <a href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="wish-list-products" class="products">
+  
+            </div> 
+            <script type="text/x-handlebars-template" id="wishListProducts">
+                {{#each products}}
+                    <div class="">
+                        <img src="{{imageMain}}" width="300" height="300">
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                        <span class="product-price">{{price}}</span>
+                    </div>
+                {{/each}}
+            </script>
+            <div class="wish-list-footer">
+                <div class="add-to-cart outline-button">
+                    <a href="#">Add to cart</a>
+                </div>
+                <div class="clear-wish-list-button outline-button">
+                    <a href="#">Clear wishlist</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+        <section class="shop-hero">
+            <div class="hero">
+                <div class="hero-title">
+                    <h2><span>Browse, choose, buy! </span></h2>
+                    <p>Our stylish and comfortable furniture is waiting for you. Explore our collection and create the perfect interior for your home.</p>
+                    <figure>
+                        <img class="delivery-icon" src="img/Icon/delivery.png">
+                        <figcaption>Free delivery for all our customers!</figcaption>
+                    </figure>
+                </div>
+                <div class="hero-img">
+                    <img src="img/image-PhotoRoom.png-PhotoRoom (2).png">
+                </div>
+            </div>
+        </section>
+        <section class="store">
+            <div class="wrapper"></div>
+            <div class="store-title">
+                <h2>Our product</h2>
+            </div>
+            <div class="products-filter">
+                <div class="category-selections">
+                    <span data-category="All" class="category-selection">All</span>
+                    <span id="table" data-category="Table" class="category-selection link-underline">TABLES</span>
+                    <span id="storage" data-category="Storage" class="category-selection link-underline">STORAGE</span>
+                    <span id="seating" data-category="Seating" class="category-selection link-underline">SEATING</span>
+                    <span id="bed" data-category="Bed" class="category-selection link-underline">BEDS</span>
+                    <span id="accessories" data-category="Accessories" class="category-selection link-underline">ACCESSORIES</span>
+                    <span id="newProduct" class="category-selection link-underline">NEW</span>
+                </div>
+                <div class="search">
+                    <img src="img/Icon/search.png" alt="Heart">
+                    <input id="search" type="text" placeholder="Enter your keywords..."/>
+                    <ul id="suggestions"></ul>
+                </div>
+                <div class="sort-by">
+                    <select name="sortBy" id="sortSelect">
+                        <option value="all" selected>All</option>
+                        <option value="lowToHigh">Price: low to high</option>
+                        <option value="highToLow">Price: high to low</option>
+                    </select>
+                </div>
+            </div>
+            <div id="allProductsContainer" class="products-grid">
+            </div>
+            <script type="text/x-handlebars-template" id="storeProducts">
+                {{#each products}}
+                    <div class="product-image">
+                        <img class="main-img" src="{{imageMain}}" width="300" height="300">
+                        <img class="additional-img" src="{{imageAdditional}}" width="300" height="300">
+                    </div>
+                    <div class="notification">
+                        <p class="notification"></p>
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                        <div class="action-button see">
+                            <img src="img/Icon/see.png">
+                            <span class="action-button-text">quick view</span>
+                        </div>
+                        <div class="action-button add-to-cart">
+                            <img src="img/Icon/parcel.png" alt="Cart">
+                            <span class="action-button-text">add to cart</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                        <span class="product-price">{{price}}$</span>
+                    </div>
+                    <div class="quick-view">
+                        <div class="quick-view-close-button"></div>
+                        <div class="quick-view__img">
+                            <img src="{{imageMain}}" width="300" height="300">
+                        </div>
+                        <div class="quick-view__product-info">
+                            <div class="quick-view__product-info-detais">
+                                <p class="product-name">{{name}}</p>
+                                <span class="">{{price}}$</span>
+                            </div>
+                            <div class="quick-view__product-button">
+                                <div class="action-button like">
+                                    <img src="img/Icon/heart.png">
+                                    <span class="action-button-text">add to wishlist</span>
+                                </div>
+                                <div class="outline-button add-to-cart">
+                                    <a href="#">Add to cart</a>
+                                </div>
+                            </div>
+                            <div class="products-description">
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </script>
+        </section>
+        
+       
+
+
+
+
+        
+
+    </body>
+
+    <script type="module" src="js/shop.js"></script>
+    <script type="module" src="js/productsWishList.js"></script>
+    <script type="module" src="js/productsCart.js"></script>
+
+
+</html>
+
+
+
+
+
+

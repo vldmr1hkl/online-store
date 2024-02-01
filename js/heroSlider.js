@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $('.hero-slider').slick({
+        arrows:false,
+        dots:true,
+        autoplay:true,
+        autoplaySpeed:4500,
+        pauseOnHover:false,
+        pauseOnFocus:false
+    });
+});

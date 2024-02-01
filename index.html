@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home</title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="main-background"></div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <img src="img/Icon/logo.avif" alt="logo">
+                </a>
+            </div>
+            <div class="header__navigation">
+                <nav class="navigation__menu">
+                    <ul class="menu-list">
+                        <li class="menu-list__item menu-list__items">
+                            <a href="index.html" class="menu-list__link">Home</a>
+                            <a href="shop.html" class="menu-list__link">Shop</a>
+                            <a href="about.html" class="menu-list__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__icons">
+                <div class="header__icon">
+                    <a href="admin.html" class="header__icon-link">
+                        <img src="img/Icon/user.png" alt="Avatar">
+                    </a>
+                </div>
+                <div class="header__icon wish-list-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/heart.png" alt="Heart">
+                    </a>
+                </div>
+                <div class="header__icon cart-open-button">
+                    <a href="#" class="header__icon-link">
+                        <img src="img/Icon/parcel.png" alt="Cart">
+                    </a>
+                </div>
+                <div class="header__icon burger-menu-button-container">
+                    <span class="burger-menu-button"></span>
+                </div>
+            </div>
+        </div>
+        <div class="notification">
+            <p></p>
+        </div>
+        <div class="cart-container">
+            <div class="cart-title">
+                <h2>Cart</h2>
+                <span class="cart-close-button close-button"></span>
+            </div>
+            <div class="cart-empty">
+                <div class="img-container">
+                    <img src="img/Icon/shopping-cart.png" alt="Cart">
+                </div>
+                <p>Your cart is currently empty.</p>
+                <div class="discover-button">
+                    <a class="outline-button" href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="products-cart" class="products">
+            </div> 
+            <script type="text/x-handlebars-template" id="productsInCart">
+            {{#each products}}
+                <div class="cart-product-img">
+                    <img src="{{imageMain}}" width="300" height="300" alt="{{name}}">
+                </div>
+                <div class="cart-product-info">
+                    <p class="product-name">{{name}}</p>
+                    <span class="product-price">Price: {{price}}$</span>
+                </div>
+                <div class="remove-button">
+                    <span></span>
+                </div>
+            {{/each}}
+            </script>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <span></span>
+                </div>
+                <div class="cart-buttons">
+                    <a class="outline-button" href="#">Checkout</a>
+                    <a class="outline-button" href="order.html">View Cart</a>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+        <div class="wish-list-container">
+            <div class="wish-list-title">
+                <h2>Wishlist</h2>
+                <span class="wish-list-close-button close-button"></span>
+            </div>
+            <div class="wish-list-empty">
+                <div class="img-container">
+                    <img src="img/Icon/heart.png" alt="Heart">
+                </div>
+                <p>Your wishlist is currently empty.</p>
+                <div>
+                    <a class="outline-button" href="shop.html">Discover</a>
+                </div>
+            </div>
+            <div id="wish-list-products" class="products">
+            </div> 
+            <script type="text/x-handlebars-template" id="wishListProducts">
+                {{#each products}}
+                    <div class="">
+                        <img src="{{imageMain}}" width="300" height="300" alt="{{name}}">
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png" alt="Heart">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                        <span class="product-price">{{price}}</span>
+                    </div>
+                {{/each}}
+            </script>
+            <div class="wish-list-footer">
+                <div class="add-to-cart outline-button">
+                    <a href="#">Add to cart</a>
+                </div>
+                <div class="clear-wish-list-button outline-button">
+                    <a href="#">Clear wishlist</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="hero-slider">
+            <div class="hero hero-home">
+                <div class="hero-title">
+                    <h2><span>Give your space</span>a touch of style.</h2>
+                    <p>Designed and crafted in Spain, delivered worldwide.</p>
+                    <div>
+                        <a class="outline-button" href="shop.html">Discover</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="img/baner/Neva-sofa-bg.png" alt="Neva sofa">
+                </div>
+            </div>
+            <div class="hero hero-home">
+                <div class="hero-title">
+                    <h2>Designs that <span>speak your language.</span></h2>
+                    <p>Lifestyle transformation in each crafted chair, making every moment exceptional.</p>
+                    <div>
+                        <a class="outline-button" href="shop.html">Discover</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="img/baner/Blend-coffee-table-bgpng.png" alt="Blend coffee table">
+                </div>
+            </div>
+            <div class="hero hero-home">
+                <div class="hero-img">
+                    <img src="img/baner/Velo-chair-bg.png" alt="Velo chair">
+                </div>
+                <div class="hero-title">
+                    <h2>Crafting lifestyles<span>one chair at a time.</span></h2>
+                    <p>Indulge in comfort and elegance with our meticulously designed furnishings, where every detail speaks to refined living.</p>
+                    <div>
+                        <a class="outline-button" href="shop.html">Discover</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero hero-home">
+                <div class="hero-title">
+                    <h2><span>Discover the art of living well.</span></h2>
+                    <p>Savor comfort and elegance in every detail with our meticulously crafted furnishings.</p>
+                    <div>
+                        <a class="outline-button" href="shop.html">Discover</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="img/baner/Eny-shelf-bg.png" alt="Eny shelf">
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="category-title">
+                <h2>Shop by type</h2>
+                <p>Essential furniture for any functional and stylish home</p>
+            </div>
+            <div class="category-products">
+                <a href="#" id="table-wallpaper">
+                    <img src="img/baner/Category-table.png" alt="Category table bg">
+                </a>
+                <a href="#" id="storage-wallpaper">
+                    <img src="img/baner/Category-storage.png" alt="Category storage">
+                </a>
+                <a href="#" id="seating-wallpaper">
+                    <img src="img/baner/Category-seating.png" alt="Category seating">
+                </a>
+                <a href="#" id="accessories-wallpaper">
+                    <img src="img/baner/Category-accessories.png" alt="Category accessories">
+                </a>
+            </div>
+        </section>
+
+        <section class="product-video">
+            <div class="video-title">
+                <h2>Leading Wooden Furniture</h2>
+                <p>Uncover the world of natural beauty in each item of our unique wooden furniture, distinguished by meticulous workmanship and unparalleled style</p>
+                <div class="icon-container">
+                    <figure><img src="img/Icon/leaf.png" alt="Eco-friendly" width="60" height="60"><figcaption>Natural materials for health and comfort.</figcaption></figure>
+                    <figure><img src="img/Icon/quality.png" alt="Quality Guarantee" width="60" height="60"><figcaption>Quality that adorns your space with comfort guaranteed.</figcaption></figure>
+                    <figure><img src="img/Icon/paper.png" alt="Craftsmanship" width="60" height="60"><figcaption>Top-notch craftsmanship for touchable quality.</figcaption></figure>
+                    <figure><img src="img/Icon/time.png" alt="Durability" width="60" height="60"><figcaption>Exceptionally robust furniture designed to last for years.</figcaption></figure>
+                </div>
+            </div>
+            <div class="video-container">
+                <video src="video/ZEITRAUM_CURTAIN-Produktvideo.mp4" loop autoplay muted></video>
+            </div>
+        </section>
+
+
+        <section class="products-slider-container">
+            <div class="products-slider-header">
+                <div class="products-slider-title">
+                    <h2>Comfort and style in every detail</h2>
+                    <p>Discover the perfect furniture for your home and transform your space into the coziest haven.</p>
+                </div>
+                <div class="products-slider-button">
+                    <a class="outline-button" href="shop.html">Shop now</a>
+                </div>
+            </div>
+            <div class="products-slider"></div>
+            <script type="text/x-handlebars-template" id="productsSlider">
+                {{#each productsForSlider}}
+                    <div class="slide-item-left">
+                        <img class="main-img" src="{{imageMain}}" width="300" height="300">
+                    </div>
+                    <div class="slide-item-midle">
+                        <img class="main-img" src="{{imageForSlider}}" width="300" height="300">
+                        <div class="product-details">
+                            <p class="product-name">{{name}}</p>
+                            <span class="product-price">{{price}}$</span>
+                        </div>
+                        <div class="product-actions horizontal-product-action">
+                            <div class="action-button like">
+                                <img src="img/Icon/heart.png">
+                                <span class="action-button-text">add to wishlist</span>
+                            </div>
+                            <div class="action-button add-to-cart">
+                                <img src="img/Icon/parcel.png" alt="Cart">
+                                <span class="action-button-text">add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item-right">
+                        <img class="main-img" src="{{imageAdditional}}" width="300" height="300">
+                    </div>
+                {{/each}}
+            </script>
+        </section>
+
+        <section class="products-colors">
+            <div class="products-colors-title">
+                <h2>Nature-Inspire <br> Furniture</h2>
+                <p>Unveiling a Tranquil Palette of Timeless Tones</p>
+            </div>
+            <div class="color-palettes">
+                <div class="color-1">
+                    <span>A neutral and warm color reminiscent of coziness and tranquility. Reflects style and elegance.</span>
+                </div>
+                <div class="color-2">
+                    <span>A warm and light color associated with nature and relaxation by the sea. Creates an atmosphere of comfort and calm.</span>
+                </div>
+                <div class="color-3">
+                    <span>A natural and neutral color reminiscent of reeds or light powder. Creates an impression of naturalness and harmony.</span>
+                </div>
+                <div class="color-4">
+                    <span>A deep and warm color reminiscent of traditional crafts and natural materials. Creates an impression of stability and warmth.</span>
+                </div>
+                <div class="color-5">
+                    <span>Subdued and dark green color associated with deep forests and natural environments. Evokes the impression of natural beauty and eco-friendliness.</span>
+                </div>
+                <div class="color-6">
+                    <span>Delicate and light lavender color that creates the impression of a spring breeze and lightness. Evokes associations with pleasant spring moments.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-arrivals">
+            <div class="new-arrivals-background">
+                <h2>NEW</h2>
+            </div>
+            <div class="new-arrivals-title">
+                <h2>A New Era of Modernity</h2>
+                <p>Introducing Our Latest Furniture Collection.</p>
+                <p>Design That Will Change Your Perspective on Home Beauty and Comfort</p>
+            </div>
+            <div  id="newArrivalsContainer" class="new-arrivals-products products">
+            </div>
+            <script type="text/x-handlebars-template" id="newArrivals">
+                {{#each products}}
+                    <div class="product-image">
+                        <img class="main-img" src="{{imageMain}}" width="300" height="300">
+                        <img class="additional-img" src="{{imageAdditional}}" width="300" height="300">
+                    </div>
+                    <div class="notification">
+                        <p class="notification"></p>
+                    </div>
+                    <div class="product-actions vertical-product-action">
+                        <div class="action-button like">
+                            <img src="img/Icon/heart.png">
+                            <span class="action-button-text">add to wishlist</span>
+                        </div>
+                        <div class="action-button add-to-cart">
+                            <img src="img/Icon/parcel.png" alt="Cart">
+                            <span class="action-button-text">add to cart</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">{{name}}</p>
+                    </div>
+                {{/each}}
+            </script>
+        </section>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="module" src="js/home.js"></script>
+        <script type="module" src="js/products.js"></script>
+        <script type="module" src="js/productsSlider.js"></script>
+        <script type="module" src="js/productsWishList.js"></script>
+        <script type="module" src="js/productsCart.js"></script>
+        <script type="module" src="js/heroSlider.js"></script>
+
+    </body>
+    
+
+
+</html>

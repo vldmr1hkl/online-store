@@ -1,0 +1,103 @@
+section.product-workspace{
+    display: flex;
+    padding: 100px 10px;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 100px;
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.create-product-container,
+.edit-product-container{
+    position: relative;
+    padding: 50px 0 ;
+    border: 1px solid black;
+}
+#edit-product{
+    padding: 0 15px;
+}
+#edit-product .product-item{
+    margin: 5px;
+}
+.workspace-title{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.workspace-title h2{
+    padding-bottom: 10px;
+}
+.workspace-title p{
+    font-size: 12px;
+}
+.edit-product-container .category-selections{
+    padding: 20px 10px 40px;
+    overflow-x: scroll;
+}
+.form-to-create{
+    height: 500px;
+}
+.form-to-create input,
+.form-to-create textarea{
+    border-bottom: 0.5px solid black;
+}
+.form-to-edit, .form-to-create{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-to-edit{
+    background: linear-gradient(87deg, rgba(255, 255, 255, 0.915) 31%, rgba(255,255,255,0) 49%);
+    backdrop-filter: blur(1px);
+}
+.edit-product-container .product-item{
+    /* width: 50%; */
+    padding: 5px;
+}
+.form-to-edit div, .form-to-create div{
+    width: 100%;
+    padding: 10px;
+}
+.form-to-create div:nth-child(1),
+.form-to-create div:nth-child(2),
+.form-to-create div:nth-child(6),
+.form-to-create div:nth-child(7){
+    width: 50%;
+}
+
+.form-to-edit input[name="editProductButton"], .form-to-create input[name="createProductButton"],
+.form-to-edit input[name="deleteProductButton"]{
+    padding: 20px;
+    border: 0.5px solid #000000;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    align-self: flex-end;
+}
+
+.form-to-edit input[name="editProductButton"]:hover, .form-to-create input[name="createProductButton"],
+.form-to-edit input[name="deleteProductButton"]:hover{
+    background-color: black;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .form-to-edit div:nth-child(1),
+    .form-to-edit div:nth-child(2),
+    .form-to-edit div:nth-child(6),
+    .form-to-edit div:nth-child(7){
+        width: 50%;
+    }
+    .edit-product-container .category-selections{
+        width: min-content;
+        margin: 0 auto;
+    }
+}

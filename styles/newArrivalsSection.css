@@ -1,0 +1,77 @@
+section.new-arrivals{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.new-arrivals-products{
+}
+.new-arrivals-background{
+    position: absolute;
+    z-index: -1;
+    left: -21%;
+    top: -6%;
+    right: 0;
+    background: url('/img/eny_shelf_gallery_3_47a1c467f5-PhotoRoom.png-PhotoRoom\ \(1\).png') repeat center;
+    color: transparent;
+    background-clip: text;
+    
+}
+.new-arrivals-background h2{
+    padding-top: 250px;
+    font-size: 600px;
+    font-weight: bolder;
+    -webkit-text-stroke: 2px black;
+}
+
+.new-arrivals-title{
+    max-width: 500px;
+
+}
+.new-arrivals-title h2{
+}
+.new-arrivals-products{ 
+    position: relative;
+    z-index: 2;
+    top: 50px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 700px;
+
+}
+.new-arrivals-products .product-item{
+    min-width: 300px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0 5px;
+}
+
+.new-arrivals-products .product-item .product-image{
+    height: 400px;
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    section.new-arrivals{
+        flex-direction: row;
+    }
+    .new-arrivals-background{
+        left: -5%;
+        top: 0;
+    }
+
+
+}
+
+@media only screen and (min-width: 1024px) {
+    section.new-arrivals{
+        flex-direction: row;
+    }
+    .new-arrivals-background{
+        left: -5%;
+        top: 0;
+    }
+
+}
