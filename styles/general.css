@@ -76,6 +76,7 @@ section.products-filter{
     background-color: rgba(255, 255, 255, 0.314);
     border-radius: 50px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin-bottom: 20px;
 }
 
@@ -136,6 +137,7 @@ section.products-filter{
     width: 100%;
     height: 100%;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 3; 
 }
 .overlay.show{
@@ -252,6 +254,7 @@ section.products-filter{
     position: fixed;
     border-left: 1px solid black;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     top: 0;
     bottom: 0;
     right: -400px;
